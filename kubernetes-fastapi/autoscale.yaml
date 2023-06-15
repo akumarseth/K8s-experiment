@@ -1,0 +1,12 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: kube-fastapi-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: kube-fastapi
+  minReplicas: 1
+  maxReplicas: 10
+  targetCPUUtilizationPercentage: 50

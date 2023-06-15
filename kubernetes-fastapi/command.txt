@@ -1,0 +1,13 @@
+docker build -t svcxyzz/kubernetes-fastapi:1.0.0  . (. Represent the path of Docker file)
+
+docker run -p 8080:8080 --name kube-fastapi_container_001 svcxyzz/kubernetes-fastapi:1.0.0
+
+docker push svcxyzz/kubernetes-fastapi:1.0.0
+
+	• kubectl apply -f api.yaml
+	• kubectl get pods
+	• minikube tunnel
+	• kubectl port-forward svc/kube-fastapi-svc 9090:8080
+    • kubectl apply -f autoscale.yaml
+    
+
